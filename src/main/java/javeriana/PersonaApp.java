@@ -12,24 +12,20 @@ package javeriana;
  */
 public class PersonaApp {
 
-    private int id;
-    private String nombre;
-    private String direccion;
-    private String telefono;
+    protected String nombre;
+    protected String apellido;
+    protected long documento;
+    protected String password;
+    protected String email;
+    protected long telefono;
 
-    public PersonaApp(int id, String nombre, String direccion, String telefono) {
-        this.id = id;
+    public PersonaApp(String nombre, String apellido, long documento, String password, String email, long telefono) {
         this.nombre = nombre;
-        this.direccion = direccion;
+        this.apellido = apellido;
+        this.documento = documento;
+        this.password = password;
+        this.email = email;
         this.telefono = telefono;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -40,25 +36,50 @@ public class PersonaApp {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public long getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(long documento) {
+        this.documento = documento;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + '}';
+        return "Persona{ nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + '}';
     }
     
     

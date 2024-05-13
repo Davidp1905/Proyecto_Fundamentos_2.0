@@ -34,21 +34,37 @@ public class SvUsuarios extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-        String dni = request.getParameter("dni");
+       /*  <p><label>Documento: </label><input type="text" name="documento"></p>
+            <p><label>Nombre: </label><input type="text" name="nombre"></p>
+            <p><label>Apellido: </label><input type="text" name="apellido"></p>
+            <p><label>Password: </label><input type="password" name="password"></p>
+            <p><label>Email: </label><input type="email" name="email"></p>
+            <p><label>Teléfono: </label><input type="text" name="telefono"></p>
+        */
+       
+        String documento = request.getParameter("documento");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
-        String telefono = request.getParameter("telefono");   
-        int numeroComoEntero = Integer.parseInt(dni);
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String telefono = request.getParameter("telefono"); 
         
-        System.out.println("El DNI es: " + dni);
+        long documentoLong = Integer.parseInt(documento);
+         long telefonoLong = Integer.parseInt(telefono);
+        // String cargo = "Cliente";
+        
+        System.out.println("El doc es: " + documento);
         System.out.println("El nombre es: " + nombre);
         System.out.println("El apellido es: " + apellido);
         System.out.println("El tel es: " + telefono);
         
-        
-        PersonaApp persona1 = new PersonaApp(numeroComoEntero, nombre, apellido, telefono);
+        //Toca convertir a String el telefono xd
+        // String nombre, String apellido, long documento, String password, String email, long telefono
+        PersonaApp persona1 = new PersonaApp(nombre, apellido, documentoLong, password, email, telefonoLong);
         PersonaAppFacade personaAppFacade = new PersonaAppFacade(); 
         personaAppFacade.insertarPersona(persona1);
+        
+        
     }
 
     @Override

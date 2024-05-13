@@ -21,16 +21,32 @@ public class PersonaAppDAO {
     public PersonaAppDAO() {
 
     }
-
+// Esta recibe es de tipo Cliente
     public void insertarPersona(PersonaApp persona) {
         try {
-            // Preparar la consulta para insertar un nuevo persona
-            String query = "INSERT INTO personas (id,nombre, direccion, telefono) VALUES (?, ?, ?,?)";
-            PreparedStatement preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setInt(1, persona.getId());
+            
+            /*
+            Documento INT PRIMARY KEY,
+            Nombre VARCHAR(50) NOT NULL,
+            Apellido VARCHAR(50) NOT NULL,
+            Contraseña VARCHAR(50) NOT NULL,
+            Telefono VARCHAR(20),
+            Correo VARCHAR(50),
+            Cargo VARCHAR(50)            
+            */
+            // Preparar la consulta para insertar un nuevo cliente
+            String query = "INSERT INTO persona (documento ,nombre, apellido,contraseña, telefono, correo, cargo) VALUES (?, ?, ?,?,?,?,?)";
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            // long telefonoLong = Integer.parseInt(telefono);
+            int documento = (int)persona.getDocumento();
+            preparedStatement.setLong(1, documento);
             preparedStatement.setString(2, persona.getNombre());
-            preparedStatement.setString(3, persona.getDireccion());
-            preparedStatement.setString(4, persona.getTelefono());
+            preparedStatement.setString(3, persona.getApellido());
+            preparedStatement.setString(4, persona.getPassword());           
+            preparedStatement.setString(6,persona.getEmail());
+            preparedStatement.setLong(5,persona.getTelefono());
+            preparedStatement.setString(7,"User"); 
+          //  preparedStatement.setString(6, persona.getCargo());
 
             // Ejecutar la consulta
             preparedStatement.executeUpdate();
@@ -43,7 +59,7 @@ public class PersonaAppDAO {
     public void abrirConexion() {
 
         // Inicializar la conexión a la base de datos
-        String url = "jdbc:mysql://localhost:3306/pruebasxd";
+        String url = "jdbc:mysql://localhost:3306/banco";
         String username = "root";
         String password = "";
         try {

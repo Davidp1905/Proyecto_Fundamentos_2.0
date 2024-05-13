@@ -1,0 +1,33 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, section, article, footer {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.gerente {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.gerente img {
+    width: 100px; /* Ajusta el tamaño de la imagen según necesites */
+    height: auto;
+    border-radius: 50%; /* Para hacer las imágenes circulares */
+}
+
