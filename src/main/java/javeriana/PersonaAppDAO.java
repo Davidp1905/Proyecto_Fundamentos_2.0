@@ -12,7 +12,10 @@ package javeriana;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.*;
 
 public class PersonaAppDAO {
 
@@ -25,7 +28,7 @@ public class PersonaAppDAO {
     public void insertarPersona(PersonaApp persona) {
         try {
             
-            /*
+            /* ASí es la tabla de PERSONA en la base de datos
             Documento INT PRIMARY KEY,
             Nombre VARCHAR(50) NOT NULL,
             Apellido VARCHAR(50) NOT NULL,
@@ -56,6 +59,43 @@ public class PersonaAppDAO {
         }
     }
 
+    public List<PersonaApp> obtenerPersonas() {
+        List<PersonaApp> personas = new ArrayList<>();
+        try {
+              // Asegúrate de que la conexión esté abierta
+
+            // Preparar y ejecutar la consulta SQL
+           
+            //Statement statement = this.connection.createStatement();
+            //ResultSet resultSet = statement.executeQuery(query);
+            String query = "SELECT * FROM persona";
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+            // Iterar sobre los resultados y crear objetos PersonaApp
+            while (resultSet.next()) {
+                long documento = resultSet.getLong("documento");
+                String nombre = resultSet.getString("nombre");
+                String apellido = resultSet.getString("apellido");
+                String contraseña = resultSet.getString("contraseña");
+                long telefono = resultSet.getLong("telefono");
+                String correo = resultSet.getString("correo");
+                String cargo = resultSet.getString("cargo");
+
+                // String nombre, String apellido, long documento, String password, String email, long telefono
+                PersonaApp persona = new PersonaApp(nombre, apellido, documento, contraseña,correo, telefono,  cargo);
+                personas.add(persona);
+            }
+
+            resultSet.close();
+            statement.close();
+            // Cerrar la conexión después de usarla
+
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar personas: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return personas;
+    }
+    
     public void abrirConexion() {
 
         // Inicializar la conexión a la base de datos

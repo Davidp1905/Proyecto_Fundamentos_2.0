@@ -26,7 +26,13 @@ public class PersonaAppFacade {
         personaDAO.insertarPersona(persona);
         personaDAO.cerrarConexion();
     }
-
+    
+    public List<PersonaApp> obtenerPersonas(){
+        personaDAO.abrirConexion();
+        List<PersonaApp> personas = personaDAO.obtenerPersonas();
+         personaDAO.cerrarConexion();
+         return personas;
+    }
     
     public void cerrarConexion() {
         personaDAO.cerrarConexion();

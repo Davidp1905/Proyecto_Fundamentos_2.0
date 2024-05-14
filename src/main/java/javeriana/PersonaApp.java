@@ -18,6 +18,7 @@ public class PersonaApp {
     protected String password;
     protected String email;
     protected long telefono;
+    private String cargo;
 
     public PersonaApp(String nombre, String apellido, long documento, String password, String email, long telefono) {
         this.nombre = nombre;
@@ -28,6 +29,17 @@ public class PersonaApp {
         this.telefono = telefono;
     }
 
+    public PersonaApp(String nombre, String apellido, long documento, String password, String email, long telefono, String cargo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.documento = documento;
+        this.password = password;
+        this.email = email;
+        this.telefono = telefono;
+        this.cargo = cargo;
+    }
+
+    
     public String getNombre() {
         return nombre;
     }

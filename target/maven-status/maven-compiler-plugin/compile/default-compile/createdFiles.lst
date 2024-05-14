@@ -1,8 +1,7 @@
 com\mycompany\mavenproject1\JakartaRestConfiguration.class
+LoginServlet.class
 Servlets\SvUsuarios.class
 javeriana\PersonaApp.class
 javeriana\PersonaAppFacade.class
 com\mycompany\mavenproject1\resources\JakartaEE10Resource.class
-javeriana\Administrador.class
 javeriana\PersonaAppDAO.class
-javeriana\Usuario.class

@@ -31,7 +31,7 @@ public class SvUsuarios extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
        
        /*  <p><label>Documento: </label><input type="text" name="documento"></p>
