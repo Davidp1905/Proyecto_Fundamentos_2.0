@@ -22,6 +22,7 @@ public class PersonaAppDAO {
     private Connection connection;
 
     public PersonaAppDAO() {
+        abrirConexion();
 
     }
 // Esta recibe es de tipo Cliente
@@ -61,6 +62,37 @@ public class PersonaAppDAO {
 
     public List<PersonaApp> obtenerPersonas() {
         List<PersonaApp> personas = new ArrayList<>();
+        String query = "SELECT * FROM PERSONA";
+        System.out.println("Tamaño inicial de personas:  " +personas.size());
+        try (Statement statement = this.connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+            System.out.println("Prueba 1:  ");
+            while (resultSet.next()) { 
+                long documento = resultSet.getLong("documento");
+                String nombre = resultSet.getString("nombre");
+                String apellido = resultSet.getString("apellido");
+                String contraseña = resultSet.getString("contraseña");
+                long telefono = resultSet.getLong("telefono");
+                String correo = resultSet.getString("correo");
+                String cargo = resultSet.getString("cargo");
+                System.out.println("Prueba 2:  ");
+                //String nombre, String apellido, long documento, String password, String email, long telefono, String cargo
+                PersonaApp persona = new PersonaApp(nombre, apellido, documento, contraseña, correo, telefono, cargo);
+                personas.add(persona);
+                System.out.println("Prueba 2.1");
+            }
+            
+            for(PersonaApp p : personas){
+                System.out.println("nombre:" + p.nombre + "apellido" + p.apellido + " Doc " + p.documento);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar personas: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        
+        /*      
         try {
               // Asegúrate de que la conexión esté abierta
 
@@ -68,7 +100,7 @@ public class PersonaAppDAO {
            
             //Statement statement = this.connection.createStatement();
             //ResultSet resultSet = statement.executeQuery(query);
-            String query = "SELECT * FROM persona";
+      String query = "SELECT * FROM persona";
             PreparedStatement preparedStatement = this.connection.prepareStatement(query);
             // Iterar sobre los resultados y crear objetos PersonaApp
             while (resultSet.next()) {
@@ -85,14 +117,14 @@ public class PersonaAppDAO {
                 personas.add(persona);
             }
 
-            resultSet.close();
+            resultSet.close(); 
             statement.close();
             // Cerrar la conexión después de usarla
 
         } catch (SQLException e) {
             System.out.println("Error al recuperar personas: " + e.getMessage());
             e.printStackTrace();
-        }
+        }*/
         return personas;
     }
     

@@ -51,7 +51,7 @@ public class SvUsuarios extends HttpServlet {
         
         long documentoLong = Integer.parseInt(documento);
          long telefonoLong = Integer.parseInt(telefono);
-        // String cargo = "Cliente";
+        //String cargo = "Cliente";
         
         System.out.println("El doc es: " + documento);
         System.out.println("El nombre es: " + nombre);

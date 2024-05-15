@@ -30,8 +30,8 @@ public class PersonaAppFacade {
     public List<PersonaApp> obtenerPersonas(){
         personaDAO.abrirConexion();
         List<PersonaApp> personas = personaDAO.obtenerPersonas();
-         personaDAO.cerrarConexion();
-         return personas;
+        personaDAO.cerrarConexion();
+        return personas;
     }
     
     public void cerrarConexion() {
