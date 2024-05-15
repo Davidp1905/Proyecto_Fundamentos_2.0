@@ -50,21 +50,17 @@ public class SvUsuarios extends HttpServlet {
         String telefono = request.getParameter("telefono"); 
         
         long documentoLong = Integer.parseInt(documento);
-         long telefonoLong = Integer.parseInt(telefono);
+        long telefonoLong = Integer.parseInt(telefono);
         //String cargo = "Cliente";
         
-        System.out.println("El doc es: " + documento);
-        System.out.println("El nombre es: " + nombre);
-        System.out.println("El apellido es: " + apellido);
-        System.out.println("El tel es: " + telefono);
         
-        //Toca convertir a String el telefono xd
+        //Toca convertir a long el telefono xd
         // String nombre, String apellido, long documento, String password, String email, long telefono
         PersonaApp persona1 = new PersonaApp(nombre, apellido, documentoLong, password, email, telefonoLong);
         PersonaAppFacade personaAppFacade = new PersonaAppFacade(); 
         personaAppFacade.insertarPersona(persona1);
         
-        
+        response.sendRedirect("inicio.jsp");
     }
 
     @Override

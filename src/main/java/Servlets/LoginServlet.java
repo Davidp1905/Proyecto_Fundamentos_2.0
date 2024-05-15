@@ -16,34 +16,35 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         try {
+            // Casteamos el documento a long
             long documentoLong = Integer.parseInt(documento);
-
-              System.out.println("Docuemnto leido: " + documentoLong + " contraseña: " + password);
 
             PersonaAppFacade personaAppFacade = new PersonaAppFacade(); 
 
             List<PersonaApp> personas = personaAppFacade.obtenerPersonas();
 
-            for(PersonaApp persona : personas){
-                System.out.println("\nPersonas: " + persona.getNombre() + "Apellido" + persona.getApellido() + "Telefono" + persona.getTelefono());
-            }
             boolean valido = false;
+            // Recorre la lista de personas que obtuvo de la base de datos 
+            // Busca al usuario y contraseña que se trata de loguear
             for(PersonaApp persona : personas){
                 if(persona.getDocumento() == documentoLong && persona.getPassword().equals(password)){
                     valido = true;
-                    persona.toString();
                     break;
                 }
             }
 
-            // Aquí se debe implementar la lógica de validación de las credenciales
-            // Por ejemplo, verificar contra una base de datos
+         
             if (valido) {  
+                
+                // preguntar si es usuario
                 // Si las credenciales son correctas
-                System.out.println("Si sirve");
+       
                 HttpSession session = request.getSession();
                 session.setAttribute("documento", documento);
-                response.sendRedirect("interfazUsuario.jsp"); // Redirigir al dashboard
+                response.sendRedirect("interfazUsuario.jsp"); // Redirigir a la interfaz del ususario
+                
+                
+                // Si no es usuario mandar al menu de ADMIN ->toca crearlo
             } else {
                 // Si las credenciales son incorrectas
                 response.sendRedirect("login.jsp?error=true"); // Volver al login y mostrar error
