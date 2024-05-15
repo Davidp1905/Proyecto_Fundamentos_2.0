@@ -81,10 +81,7 @@ public class PersonaAppDAO {
                 personas.add(persona);
                
             }
-            
-            for(PersonaApp p : personas){
-                System.out.println("nombre:" + p.nombre + "apellido" + p.apellido + " Doc " + p.documento);
-            }
+
 
         } catch (SQLException e) {
             System.out.println("Error al recuperar personas: " + e.getMessage());
