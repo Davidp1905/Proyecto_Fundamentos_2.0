@@ -9,10 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Pantalla de Administración</title>
     </head>
     <body>
-        <h1>Interfaz ADmin UwU hola2   f</h1>
+        <form action="VerListadoClientesAdminServlet" method="post">
+            <button type="submit">Ver listado de clientes</button>
+        </form>
         
+        <button onclick="window.location.href='verListadoPersonas.jsp';">Ver Clientes</button>
+
+
+        <p><a href="VerTransacciones">Ver transacciones realizadas</a></p>  <!-- Asumiendo que también deseas un enlace para esto -->
+    
+        <form action="LogoutServlet" method="GET">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
     </body>
 </html>

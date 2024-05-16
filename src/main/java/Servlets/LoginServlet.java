@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
                  
                 if ("User".equalsIgnoreCase(cargo)){
                     System.out.println("El cargo de hoy es:" + cargo);
-                    response.sendRedirect("inicio.jsp"); 
+                    response.sendRedirect("interfazUsuario.jsp"); 
                     
                 } else if ("CEO".equalsIgnoreCase(cargo)){    
                     System.out.println("El cargo de hoy es:" + cargo);
