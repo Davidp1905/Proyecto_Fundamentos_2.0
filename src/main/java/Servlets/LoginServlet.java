@@ -14,6 +14,10 @@ import javeriana.*;
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        // Establecer las cabeceras para evitar caché
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setHeader("Expires", "0"); // Proxies.
         
         String documento = request.getParameter("documento");
         String password = request.getParameter("password");
@@ -40,26 +44,28 @@ public class LoginServlet extends HttpServlet {
                 }
             }
 
-            for(PersonaApp p: personas){
-                System.out.println("Nombre " + p.getNombre() + " Apellido " + p.getApellido() + " Cargo " + p.getCargo()  );
-            }
+           
             if (valido) {
                 // Si las credenciales son correctas
-                HttpSession session = request.getSession();
+                HttpSession session = request.getSession(true);
                 session.setAttribute("usuarioLogueado", true);
                 session.setAttribute("documento", documento);
-                
-                
+                session.setAttribute("cargo", cargo);
+                 
                 if ("User".equalsIgnoreCase(cargo)){
                     System.out.println("El cargo de hoy es:" + cargo);
-                    response.sendRedirect("interfazUsuario.jsp"); // Redirigir a la interfaz del ususario
+                    response.sendRedirect("inicio.jsp"); 
                     
-                } else {    
+                } else if ("CEO".equalsIgnoreCase(cargo)){    
                     System.out.println("El cargo de hoy es:" + cargo);
-                    response.sendRedirect("adminDashboard.jsp"); // Redirigir a la interfaz del admin
+                    response.sendRedirect("adminScreen.jsp"); 
                     
-                }
+                }  
             } else {
+                HttpSession session = request.getSession(false);
+                if(session != null){
+                    session.invalidate();
+                }
                 // Si las credenciales son incorrectas
                 response.sendRedirect("login.jsp?error=true"); // Volver al login y mostrar error
             }

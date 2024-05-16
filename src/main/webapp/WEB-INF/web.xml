@@ -10,4 +10,9 @@
         <welcome-file>index.jsp</welcome-file> <!-- Otros archivos si es necesario -->
     </welcome-file-list>
 
+    <session-config>
+        <session-timeout>15</session-timeout> <!-- Tiempo en minutos -->
+    </session-config>
 </web-app>
+
+
