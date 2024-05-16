@@ -82,7 +82,6 @@ public class PersonaAppDAO {
                
             }
 
-
         } catch (SQLException e) {
             System.out.println("Error al recuperar personas: " + e.getMessage());
             e.printStackTrace();
