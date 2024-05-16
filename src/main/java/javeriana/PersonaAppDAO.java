@@ -39,7 +39,7 @@ public class PersonaAppDAO {
             Cargo VARCHAR(50)            
             */
             // Preparar la consulta para insertar un nuevo cliente
-            String query = "INSERT INTO persona (documento ,nombre, apellido,contraseña, telefono, correo, cargo) VALUES (?, ?, ?,?,?,?,?)";
+            String query = "CALL CrearPersona(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
             // long telefonoLong = Integer.parseInt(telefono);
             int documento = (int)persona.getDocumento();
