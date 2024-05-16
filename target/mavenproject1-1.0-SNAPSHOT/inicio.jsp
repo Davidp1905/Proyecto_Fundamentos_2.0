@@ -32,17 +32,17 @@
         </div>
         <div class="gerente">
             <img src="images/gerente2.jpg" alt="Gerente 2">
-            <p>Daniel Gonzalez - CFO</p>
+            <p>Daniel Gonzalez - COO</p>
             <p>Contacto: danielfernandog14@gmail.com</p>
         </div>
         <div class="gerente">
             <img src="images/gerente2.jpg" alt="Gerente 2">
-            <p>Juan Felipe Galvis - CFO</p>
-            <p>Contacto: correoDeJuan@gmail.com</p>
+            <p>Juan Felipe Galvis - CIO</p>
+            <p>Contacto: juanfelipe54415@gmail.com</p>
         </div>
         <div class="gerente">
             <img src="images/gerente2.jpg" alt="Gerente 2">
-            <p>Luis Felipe Gutierrez - CFO</p>
+            <p>Luis Felipe Gutierrez - CTO</p>
             <p>Contacto: correoDeLuis@gmail.com</p>
         </div>
     </footer>
