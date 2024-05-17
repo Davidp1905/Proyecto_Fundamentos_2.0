@@ -25,12 +25,37 @@ public class TransaccionDAO {
             
             preparedStatement.setInt(1, transaccion.getDocumentoOrigen());
             preparedStatement.setDouble(2, transaccion.getMonto());
-            preparedStatement.setLong(3, transaccion.getDocumentoDestino());
+            preparedStatement.setInt(3, transaccion.getDocumentoDestino());
             
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    public List<Transaccion> transaccionesHechas(int doc){
+        List<Transaccion> transacciones = obtenerTransacciones();
+        List<Transaccion> hechas = new ArrayList<Transaccion>();;
+        
+        for (Transaccion t : transacciones){
+            if(t.getDocumentoOrigen() == doc){
+                hechas.add(t);
+            }
+        }
+        
+        return hechas;
+    }
+    public List<Transaccion> transaccionesRecibidas(int doc){
+        List<Transaccion> transacciones = obtenerTransacciones();
+        List<Transaccion> recib = new ArrayList<Transaccion>();
+        
+        for (Transaccion t : transacciones){
+            if(t.getDocumentoDestino()== doc){
+                recib.add(t);
+            }
+        }
+        
+        return recib;
     }
     
     public List<Transaccion> obtenerTransacciones(){
@@ -43,7 +68,7 @@ public class TransaccionDAO {
             while (resultSet.next()) { 
                 Transaccion t = new Transaccion();
                 t.setDocumento(resultSet.getInt("documento"));
-                t.setIdentificador(resultSet.getInt("idTransaccion"));
+                t.setIdentificador(resultSet.getInt("identificador"));
                 t.setMonto(resultSet.getDouble("monto"));
                 t.setDocumentoOrigen(resultSet.getInt("documentoOrigen"));
                 t.setDocumentoDestino(resultSet.getInt("documentoDestino"));

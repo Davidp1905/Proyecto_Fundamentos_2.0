@@ -43,7 +43,7 @@
         <div class="gerente">
             <img src="images/gerente2.jpg" alt="Gerente 2">
             <p>Luis Felipe Gutierrez - CTO</p>
-            <p>Contacto: correoDeLuis@gmail.com</p>
+            <p>Contacto: luchito@gmail.com</p>
         </div>
     </footer>
 </body>

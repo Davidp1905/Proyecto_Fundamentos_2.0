@@ -4,15 +4,15 @@
  */
 package Servlets;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import javeriana.*;
-import javeriana.PersonaAppFacade;
 
 /**
  *
@@ -24,10 +24,18 @@ public class VerTransaccionesServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setHeader("Expires", "0"); // Proxies.
         try {
+            TransaccionFacade transaccionF = new TransaccionFacade();
+            List<Transaccion> transacciones = transaccionF.obtenerTransacciones();
+
+            HttpSession session = request.getSession(true);
+            session.setAttribute("transacciones", transacciones);
+      
             
-            
+            response.sendRedirect("verTransacciones.jsp");
         } catch (NumberFormatException e) {
             e.printStackTrace();
             response.sendRedirect("login.jsp?error=true");
@@ -35,26 +43,7 @@ public class VerTransaccionesServlet extends HttpServlet {
     }
 
 
-    protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response) 
-            throws jakarta.servlet.ServletException, IOException {
-       
-        String documentoOrigen = request.getParameter("documentoOrigen");
-        String monto = request.getParameter("monto");
-        String documentoDestino = request.getParameter("documentoDestino");
-        
-        
-        int documentoOrigenLong = Integer.parseInt(documentoOrigen);
-        int documentoDestinoLong = Integer.parseInt(documentoDestino);
-        double montoLong = Integer.parseInt(monto);
-        
-        
-       // double monto, int documentoOrigen, int documentoDestino
-        Transaccion transaccion = new Transaccion(montoLong,documentoOrigenLong, documentoDestinoLong);
-        TransaccionFacade tf = new TransaccionFacade(); 
-        tf.hacerTransaccion(transaccion);
-        
-        response.sendRedirect("verTransacciones.jsp");
-    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -93,5 +82,5 @@ public class VerTransaccionesServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+//Haz el jsp que me pida los 3 datos: documento origen, documento final y monto y que envíe el resultado al servlet
 }

@@ -29,6 +29,17 @@ public class PersonaAppFacade {
         return personas;
     }
     
+    public float traerCuentas(int doc){
+        personaDAO.abrirConexion();
+        float cuenta = personaDAO.traerCuentas(doc);
+         personaDAO.cerrarConexion();
+         return cuenta;
+    }
+    public void agregarSaldoCuenta(int doc, float saldo){
+         personaDAO.abrirConexion();
+        personaDAO.agregarSaldoCuenta(doc, saldo);
+         personaDAO.cerrarConexion();
+    }
     public void cerrarConexion() {
         personaDAO.cerrarConexion();
     }

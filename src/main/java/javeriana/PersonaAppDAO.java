@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
+import javeriana.Cuenta;
 
 public class PersonaAppDAO {
 
@@ -16,19 +17,55 @@ public class PersonaAppDAO {
         abrirConexion();
 
     }
-// Esta recibe es de tipo Cliente
+    
+    public float traerCuentas(int doc){
+        //List<Cuenta> cuentas = new ArrayList<>();
+        float cuenta = 0;
+        String query = "SELECT * FROM CUENTA";
+        try (Statement statement = this.connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+        
+        while (resultSet.next()) { 
+            float saldo = resultSet.getFloat("saldo");
+            
+            int documento = resultSet.getInt("documento");
+            
+            
+            if (documento == doc){
+                cuenta = saldo;
+            }
+        
+        }
+        
+        
+        } catch (SQLException e) {
+            System.out.println("Error:" + e.getMessage());
+            e.printStackTrace();
+        }
+        return cuenta;
+        
+    }
+    public void agregarSaldoCuenta(int doc, float saldo){
+        try{
+            String query = "CALL SumarSaldoCuenta(?, ?);";
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setInt(1, doc);
+            preparedStatement.setFloat(2, saldo);
+            
+            preparedStatement.executeUpdate();
+            
+        }catch (SQLException e) {
+            System.out.println("Error:" + e.getMessage());
+            e.printStackTrace();
+        }
+        // Necesito: Documento, Monto
+        //SumarSaldoCuenta
+    }
     public void insertarPersona(PersonaApp persona) {
         try {
             
-            /* ASí es la tabla de PERSONA en la base de datos
-            Documento INT PRIMARY KEY,
-            Nombre VARCHAR(50) NOT NULL,
-            Apellido VARCHAR(50) NOT NULL,
-            Contraseña VARCHAR(50) NOT NULL,
-            Telefono VARCHAR(20),
-            Correo VARCHAR(50),
-            Cargo VARCHAR(50)            
-            */
+            
             // Preparar la consulta para insertar un nuevo cliente
             String query = "CALL CrearPersona(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = this.connection.prepareStatement(query); 

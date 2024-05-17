@@ -8,16 +8,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import javeriana.PersonaApp;
+import javeriana.*;
 import javeriana.PersonaAppFacade;
 
 @WebServlet(name = "VerListadoClientesAdminServlet", urlPatterns = {"/VerListadoClientesAdminServlet"})
 public class VerListadoClientesAdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        
-         System.out.println("El servlet VerListadoClientesAdminServlet ha sido invocado.");
-        
+       
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
         response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         response.setHeader("Expires", "0"); // Proxies.
@@ -38,9 +36,7 @@ public class VerListadoClientesAdminServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("personas", personas);
             
-            for(PersonaApp p : personas){
-                System.out.println("Nombre " + p.getNombre() + ", Apellido " + p.getApellido());
-            }
+
             response.sendRedirect("verListadoPersonas.jsp");
             
 //request.getRequestDispatcher("verListadoPersonas.jsp").forward(request, response);

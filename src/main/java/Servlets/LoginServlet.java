@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
        
         try {
             // Casteamos el documento a long
-            long documentoLong = Integer.parseInt(documento);
+            int documentoLong = Integer.parseInt(documento);
 
 
             PersonaAppFacade personaAppFacade = new PersonaAppFacade(); 

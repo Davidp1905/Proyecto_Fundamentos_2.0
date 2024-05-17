@@ -39,6 +39,10 @@ public class PersonaApp {
         this.cargo = cargo;
     }
 
+    public PersonaApp() {
+    }
+    
+
     public String getCargo() {
         return cargo;
     }

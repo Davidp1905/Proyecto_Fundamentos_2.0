@@ -16,7 +16,19 @@ public class TransaccionFacade {
         transaccionDAO.hacerTransaccion(transaccion);
         transaccionDAO.cerrarConexion();
     }
+    public List<Transaccion> transaccionesHechas(int doc){
+        transaccionDAO.abrirConexion();
+        List<Transaccion> transacciones = transaccionDAO.transaccionesHechas(doc);
+        transaccionDAO.cerrarConexion();
+        return transacciones;
+    }
     
+    public List<Transaccion> transaccionesRecibidas(int doc){
+        transaccionDAO.abrirConexion();
+        List<Transaccion> transacciones = transaccionDAO.transaccionesRecibidas(doc);
+        transaccionDAO.cerrarConexion();
+        return transacciones;
+    }
     public List<Transaccion> obtenerTransacciones(){
         transaccionDAO.abrirConexion();
         List<Transaccion> transacciones = transaccionDAO.obtenerTransacciones();
