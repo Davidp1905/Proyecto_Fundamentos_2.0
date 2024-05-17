@@ -51,7 +51,7 @@
                 <button type="submit">Toma un Crédito</button>
             </form>
             
-            <form action="PagaCreditoServlet" method="POST">
+            <form action="VerCreditosParaPagar" method="POST">
                 <input type="hidden" name="documento" value="<%= documento %>">
                 <button type="submit">Paga tu Crédito</button>
             </form>

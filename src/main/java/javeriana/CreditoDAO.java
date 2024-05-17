@@ -15,6 +15,23 @@ public class CreditoDAO {
         abrirConexion();
     }
      
+    public void pagarCredito(int idCredito, int documento, double cantidad){
+        String query = "{CALL RestarSaldoPendiente(?, ?, ?)}";
+         // CrearCredito(monto, doc, interes)
+        
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setDouble(3, cantidad);
+            preparedStatement.setInt(2, documento);
+            preparedStatement.setInt(1, idCredito);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+       
+    }
     public void tomarCredito(double monto, int documento, float interes){
         String query = "{CALL CrearCredito(?, ?, ?)}";
          // CrearCredito(monto, doc, interes)

@@ -14,6 +14,7 @@ Servlets\VerListadoClientesAdminServlet.class
 Servlets\VerCuenta.class
 Servlets\VerCreditosServlet.class
 com\mycompany\mavenproject1\JakartaRestConfiguration.class
+Servlets\VerCreditosParaPagar.class
 javeriana\TransaccionDAO.class
 LogoutServlet.class
 javeriana\BolsilloDAO.class
@@ -28,5 +29,6 @@ javeriana\Credito.class
 javeriana\CreditoFacade.class
 Servlets\RetirarPlataPocketServlet.class
 Servlets\VerTransaccionesServlet.class
+Servlets\PagaCreditoServlet.class
 javeriana\PersonaApp.class
 Servlets\LoginServlet.class
