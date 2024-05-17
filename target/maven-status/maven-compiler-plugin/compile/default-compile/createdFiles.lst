@@ -7,6 +7,7 @@ Servlets\ConsignarCuenta.class
 javeriana\TransaccionFacade.class
 Servlets\CreaTuPocketServlet.class
 Servlets\HacerTransaccion.class
+Servlets\TomaCreditoServlet.class
 javeriana\Cuenta.class
 javeriana\Transaccion.class
 Servlets\VerListadoClientesAdminServlet.class

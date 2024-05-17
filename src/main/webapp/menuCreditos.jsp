@@ -46,7 +46,7 @@
                 <button type="submit">Mira tus Créditos</button>
             </form>
             
-            <form action="TomaCreditoServlet" method="POST">
+            <form action="tomarCredito.jsp" method="GET">
                 <input type="hidden" name="documento" value="<%= documento %>">
                 <button type="submit">Toma un Crédito</button>
             </form>

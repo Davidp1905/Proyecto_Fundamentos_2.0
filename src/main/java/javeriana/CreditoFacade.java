@@ -11,7 +11,11 @@ public class CreditoFacade {
         this.creditoDAO = new CreditoDAO();
     }
     
-    
+    public void tomarCredito(double monto, int documento, float interes){
+        creditoDAO.abrirConexion();
+        creditoDAO.tomarCredito(monto, documento, interes);
+        creditoDAO.cerrarConexion();
+    }
     public List<Credito> traerCreditos(int doc){
         creditoDAO.abrirConexion();
         List<Credito> creditos = creditoDAO.traerCreditos(doc);

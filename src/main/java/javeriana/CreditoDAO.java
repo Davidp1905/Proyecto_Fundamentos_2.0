@@ -15,6 +15,24 @@ public class CreditoDAO {
         abrirConexion();
     }
      
+    public void tomarCredito(double monto, int documento, float interes){
+        String query = "{CALL CrearCredito(?, ?, ?)}";
+         // CrearCredito(monto, doc, interes)
+        
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setDouble(1, monto);
+            preparedStatement.setInt(2, documento);
+            preparedStatement.setFloat(3, interes);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+       
+    }
+    
     public List<Credito> traerCreditos(int doc){
         List<Credito> creditos = new ArrayList<>();
         String query = "CALL VerCreditosUsuario(?);";
@@ -23,12 +41,6 @@ public class CreditoDAO {
             preparedStatement.setInt(1, doc);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
 
-            /*
-            private int identificador;
-            private double montoTotal;
-            private double saldoPendiente;
-            private float tasaInteres;
-            private Date fechaVencimiento;*/
                 while (resultSet.next()) { 
                     Credito c = new Credito();
                     c.setIdentificador(resultSet.getInt("identificador"));
@@ -37,7 +49,6 @@ public class CreditoDAO {
                     c.setTasaInteres(resultSet.getFloat("TasaInteres"));
                     c.setFechaVencimiento(resultSet.getDate("fechaVencimiento"));
                     
-
                     creditos.add(c);
                         
                 }
