@@ -51,7 +51,7 @@
         </style>
     </head>
     <body>
-        <h1>Tus Bolsillos</h1>
+        <h1>Tus Pockets</h1>
         <% 
             var documento = session.getAttribute("documento");
         %>

@@ -65,7 +65,7 @@
     <button onclick="window.location.href='menuTransacciones.jsp';">Transacciones</button>
    
     
-    <br> in progress Bolsillos
+    <br>
     <form action="menuPockets.jsp" method="GET">
         <input type="hidden" name="documento" value="<%= documento %>">
         <button type="submit">Menú Pockets</button>

@@ -47,6 +47,24 @@ public class BolsilloDAO {
         }
         return bolsillos;
     }
+    
+    public void retirarDeBolsillo(String nombre, double saldo, int documento){
+        String query = "{CALL RetirarPlataDeBolsillo(?, ?, ?)}";
+        
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setString(2, nombre);
+            preparedStatement.setDouble(3, saldo);
+            preparedStatement.setInt(1, documento);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+       
+    }
+    
     public void agregarABolsillo(String nombre, double saldo, int documento){
         String query = "{CALL AgregarPlataABolsillo(?, ?, ?)}";
         
@@ -61,10 +79,6 @@ public class BolsilloDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }   
-        
-        
-        
-        
         
     }
     public void nuevoBolsillo (String nombre, double saldo, int documento){

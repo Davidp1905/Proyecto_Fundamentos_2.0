@@ -17,10 +17,12 @@ javeriana\BolsilloDAO.class
 Servlets\VerPockets.class
 javeriana\PersonaAppFacade.class
 javeriana\Bolsillo.class
+Servlets\VerParaRetirarPlataDePocket.class
 javeriana\PersonaAppDAO.class
 Servlets\Notificaciones.class
 javeriana\BolsilloFacade.class
 javeriana\Credito.class
+Servlets\RetirarPlataPocketServlet.class
 Servlets\VerTransaccionesServlet.class
 javeriana\PersonaApp.class
 Servlets\LoginServlet.class

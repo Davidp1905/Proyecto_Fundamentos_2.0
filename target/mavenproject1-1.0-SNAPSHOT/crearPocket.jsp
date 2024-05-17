@@ -53,5 +53,7 @@
                 <button type="submit">Crear Pocket</button>
             </form>
         </div>
+                <br><br>
+        <button onclick="window.location.href='menuPockets.jsp';">Volver al Menú Pockets</button>
     </body>
 </html>

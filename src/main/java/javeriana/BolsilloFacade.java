@@ -21,6 +21,12 @@ public class BolsilloFacade {
         bolsilloDAO.agregarABolsillo (nombre, saldo, documento);
         bolsilloDAO.cerrarConexion();
      }
+     public void retirarDeBolsillo(String nombre, double saldo, int documento){
+        bolsilloDAO.abrirConexion();
+        bolsilloDAO.retirarDeBolsillo (nombre, saldo, documento);
+        bolsilloDAO.cerrarConexion();
+     }
+     
      public List<Bolsillo> obtenerBolsillos (int doc){
          bolsilloDAO.abrirConexion();
          List<Bolsillo> bolsillos = bolsilloDAO.obtenerBolsillos (doc);

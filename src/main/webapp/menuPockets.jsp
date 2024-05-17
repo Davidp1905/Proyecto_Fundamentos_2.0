@@ -46,7 +46,7 @@
             <button type="submit">Agrega Plata a tu Pocket</button>
         </form>
 
-        <form action="RetiraPlataPocketServlet" method="GET">
+        <form action="VerParaRetirarPlataDePocket" method="GET">
             <input type="hidden" name="documento" value="<%= documento %>">
             <button type="submit">Retira Plata de tu Pocket</button>
         </form>
