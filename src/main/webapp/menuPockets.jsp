@@ -10,18 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menú Pockets</title>
-        <style>
-            button {
-                padding: 8px 16px;
-                text-decoration: none;
-                color: white;
-                background-color: #007BFF;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                margin: 5px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
         <h1>Menú Pockets</h1>

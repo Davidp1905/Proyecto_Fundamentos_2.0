@@ -1,0 +1,84 @@
+/* Define your color palette */
+:root {
+    --color1: #6CBEEB;
+    --color2: #6C6EEB;
+    --color3: #6199EA;
+    --color4: #3DEEF5;
+    --color5: #76EAE0;
+    --color6: #1F69EA;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container style */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="date"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[readonly] {
+    background-color: #f3f3f3;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--color2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color3);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Header styles */
+h1 {
+    color: var(--color1);
+    text-align: center;
+}

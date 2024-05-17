@@ -4,38 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Crea tu Pocket</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            .container {
-                width: 300px;
-                margin: 0 auto;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-            }
-            label {
-                margin-top: 10px;
-            }
-            input[type="text"], input[type="number"] {
-                padding: 8px;
-                margin-top: 5px;
-            }
-            button {
-                padding: 10px;
-                margin-top: 20px;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: #0056b3;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
         <% 

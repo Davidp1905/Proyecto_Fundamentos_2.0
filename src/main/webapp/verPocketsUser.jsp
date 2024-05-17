@@ -5,6 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ver Pockets</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <style>
             table {
                 width: 100%;

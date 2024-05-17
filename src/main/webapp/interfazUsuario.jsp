@@ -1,11 +1,6 @@
-<%-- 
-    Document   : interfazUsuario
-    Created on : 13/05/2024, 5:42:22 p. m.
-    Author     : Usuario Autorizado
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
     response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
@@ -14,24 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <style>
-    button, a {
-        padding: 8px 16px;
-        text-decoration: none;
-        color: white;
-        background-color: #007BFF;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    a {
-        display: inline-block;
-    }
-</style>
+        <title>Menu Usuario</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
-    <body>
+<body>
         <h1>Hola, Bienvenido a tu Menú FLAD</h1>
         
     <%

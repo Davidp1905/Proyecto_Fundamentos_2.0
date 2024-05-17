@@ -4,34 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestión de Créditos</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            .container {
-                width: 300px;
-                margin: 0 auto;
-                text-align: center;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            button {
-                padding: 10px 20px;
-                margin: 10px 0;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                width: 100%;
-            }
-            button:hover {
-                background-color: #0056b3;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
          <%
