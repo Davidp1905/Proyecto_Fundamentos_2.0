@@ -35,6 +35,7 @@ public class ConsignarCuenta extends HttpServlet {
 
         response.sendRedirect("interfazUsuario.jsp");
         
+        
     }
 
 

@@ -22,23 +22,19 @@
                 <p>Banco FLAD, fundado en 2024, es uno de los bancos más confiables y con mayor crecimiento en la región. Ofrecemos una amplia gama de servicios financieros a más de un millón de clientes a lo largo del país.</p>
             </div>
             <div class="gerentes">
-                <div class="gerente">
-                    <img src="gerente1.jpg" alt="Gerente 1">
+                <div class="gerente 1">
                     <p>Andrés David Pérez Cely - CEO</p>
                     <p>Contacto: adperezcely@gmail.com</p>
                 </div>
-                <div class="gerente">
-                    <img src="gerente2.jpg" alt="Gerente 2">
+                <div class="gerente 2">
                     <p>Daniel Gonzalez - COO</p>
                     <p>Contacto: danielfernandog14@gmail.com</p>
                 </div>
-                <div class="gerente">
-                    <img src="gerente3.jpg" alt="Gerente 3">
+                <div class="gerente 3">
                     <p>Juan Felipe Galvis - CIO</p>
                     <p>Contacto: juanfelipe54415@gmail.com</p>
                 </div>
-                <div class="gerente">
-                    <img src="gerente4.jpg" alt="Gerente 4">
+                <div class="gerente 4">
                     <p>Luis Felipe Gutierrez - CTO</p>
                     <p>Contacto: luis.go@gmail.com</p>
                 </div>
