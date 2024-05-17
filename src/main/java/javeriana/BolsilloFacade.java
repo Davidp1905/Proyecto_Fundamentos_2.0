@@ -10,6 +10,12 @@ public class BolsilloFacade {
         this.bolsilloDAO = new BolsilloDAO();
     }
 
+      public void nuevoBolsillo (String nombre, double saldo, int documento){
+        bolsilloDAO.abrirConexion();
+        bolsilloDAO.nuevoBolsillo (nombre, saldo, documento);
+        bolsilloDAO.cerrarConexion();
+      }
+      
      public List<Bolsillo> obtenerBolsillos (int doc){
          bolsilloDAO.abrirConexion();
          List<Bolsillo> bolsillos = bolsilloDAO.obtenerBolsillos (doc);

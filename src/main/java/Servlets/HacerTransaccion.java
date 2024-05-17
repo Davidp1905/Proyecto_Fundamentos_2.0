@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import javeriana.*;
 
@@ -36,6 +37,8 @@ public class HacerTransaccion extends HttpServlet {
         Transaccion transaccion = new Transaccion(montoLong,documentoOrigenLong, documentoDestinoLong);
         TransaccionFacade tf = new TransaccionFacade(); 
         tf.hacerTransaccion(transaccion);
+                HttpSession session = request.getSession(true);
+        session.setAttribute("documento", documentoOrigenLong);
         
         response.sendRedirect("interfazUsuario.jsp");
     }

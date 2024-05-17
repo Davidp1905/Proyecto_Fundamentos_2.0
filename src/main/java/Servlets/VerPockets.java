@@ -29,16 +29,12 @@ public class VerPockets extends HttpServlet {
             
             BolsilloFacade bolsilloF = new BolsilloFacade();
             List<Bolsillo> bolsillos = bolsilloF.obtenerBolsillos(documento);
-           for(Bolsillo b : bolsillos){
-          System.out.println("id" + b.getIdBolsillo() + " Nombre " + b.getNombreBolsillo());
-      }
-
-            // CALL obtenerBolsillosUsuario(12345);
-            
+                       
             
             HttpSession session = request.getSession(true);
             session.setAttribute("bolsillos", bolsillos);
-            //session.setAttribute("documento", documento);
+            
+            session.setAttribute("documento", documento);
       
             
             response.sendRedirect("verPocketsUser.jsp");

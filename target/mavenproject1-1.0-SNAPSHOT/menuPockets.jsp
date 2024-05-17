@@ -27,10 +27,8 @@
         <h1>Menú Pockets</h1>
 
         <%
-            String documento = (String) session.getAttribute("documento");
-            if (documento == null) {
-                response.sendRedirect("login.jsp");
-            }
+            var documento = session.getAttribute("documento");
+            
         %>
 
         <form action="VerPockets" method="GET">
@@ -38,7 +36,7 @@
             <button type="submit">Revisa tus Pockets</button>
         </form>
 
-        <form action="CreaTuPocketServlet" method="GET">
+        <form action="crearPocket.jsp" method="GET">
             <input type="hidden" name="documento" value="<%= documento %>">
             <button type="submit">Crea tu Pocket</button>
         </form>

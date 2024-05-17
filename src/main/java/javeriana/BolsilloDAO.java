@@ -40,14 +40,28 @@ public class BolsilloDAO {
                         System.out.println("id" + b.getIdBolsillo() + " nombre: " + b.getNombreBolsillo());
                 }
             }
-                  for(Bolsillo b : bolsillos){
-          System.out.println("id" + b.getIdBolsillo() + " Nombre " + b.getNombreBolsillo());
-      }  
+                  
         } catch (SQLException e) {
             System.out.println("Error al recuperar personas: " + e.getMessage());
             e.printStackTrace();
         }
         return bolsillos;
+    }
+    
+    public void nuevoBolsillo (String nombre, double saldo, int documento){
+        String query = "{CALL CrearBolsillo(?, ?, ?)}";
+        
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setString(1, nombre);
+            preparedStatement.setDouble(2, saldo);
+            preparedStatement.setInt(3, documento);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }          
     }
     
     public void abrirConexion() {

@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import javeriana.*;
 
@@ -29,6 +30,8 @@ public class ConsignarCuenta extends HttpServlet {
 
         PersonaAppFacade p = new PersonaAppFacade(); 
         p.agregarSaldoCuenta(doc, cantidad);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("documento", doc);
 
         response.sendRedirect("interfazUsuario.jsp");
         
