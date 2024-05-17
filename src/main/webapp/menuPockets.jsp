@@ -41,7 +41,7 @@
             <button type="submit">Crea tu Pocket</button>
         </form>
 
-        <form action="AgregaPlataPocketServlet" method="GET">
+        <form action="VerParaAgregarPockets" method="GET">
             <input type="hidden" name="documento" value="<%= documento %>">
             <button type="submit">Agrega Plata a tu Pocket</button>
         </form>

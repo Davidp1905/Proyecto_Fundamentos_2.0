@@ -47,7 +47,26 @@ public class BolsilloDAO {
         }
         return bolsillos;
     }
-    
+    public void agregarABolsillo(String nombre, double saldo, int documento){
+        String query = "{CALL AgregarPlataABolsillo(?, ?, ?)}";
+        
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query); 
+            
+            preparedStatement.setString(2, nombre);
+            preparedStatement.setDouble(3, saldo);
+            preparedStatement.setInt(1, documento);
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        
+        
+        
+        
+        
+    }
     public void nuevoBolsillo (String nombre, double saldo, int documento){
         String query = "{CALL CrearBolsillo(?, ?, ?)}";
         

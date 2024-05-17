@@ -1,3 +1,5 @@
+Servlets\VerParaAgregarPockets.class
+Servlets\AgregaPlataPocketServlet.class
 Servlets\SvUsuarios.class
 com\mycompany\mavenproject1\resources\JakartaEE10Resource.class
 Servlets\ConsignarCuenta.class
