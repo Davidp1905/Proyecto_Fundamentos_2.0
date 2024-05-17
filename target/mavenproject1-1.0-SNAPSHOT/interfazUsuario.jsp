@@ -32,7 +32,7 @@
 </style>
     </head>
     <body>
-        <h1>Bienvenido a tu Interfaz de Usuario hola</h1>
+        <h1>Hola, Bienvenido a tu Interfaz de Usuario</h1>
         
     <%
         // Verificar si el usuario está logueado y obtener el documento

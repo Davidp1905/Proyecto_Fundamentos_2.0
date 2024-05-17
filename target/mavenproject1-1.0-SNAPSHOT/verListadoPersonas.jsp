@@ -1,5 +1,5 @@
+<%@page import="java.util.List"%>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Listado de Personas</h1>
+    <%
+        // Obtener la lista de personas desde la sesión
+        List<javeriana.PersonaApp> personas = (List<javeriana.PersonaApp>) session.getAttribute("personas");
+
+        // Verificar si la lista no está vacía
+        if (personas != null && !personas.isEmpty()) {
+    %>
     <table border="1">
         <tr>
             <th>Documento</th>
@@ -15,15 +22,27 @@
             <th>Correo</th>
             <th>Teléfono</th>
         </tr>
-        <c:forEach var="persona" items="${personas}">
-            <tr>
-                <td>${persona.documento}</td>
-                <td>${persona.nombre}</td>
-                <td>${persona.apellido}</td>
-                <td>${persona.email}</td>
-                <td>${persona.telefono}</td>
-            </tr>
-        </c:forEach>
+        <%
+            // Iterar sobre la lista de personas y mostrarlas en la tabla
+            for (javeriana.PersonaApp persona : personas) {
+        %>
+        <tr>
+            <td><%= persona.getDocumento() %></td>
+            <td><%= persona.getNombre() %></td>
+            <td><%= persona.getApellido() %></td>
+            <td><%= persona.getEmail() %></td>
+            <td><%= persona.getTelefono() %></td>
+        </tr>
+        <%
+            }
+        %>
     </table>
+    <%
+        } else {
+    %>
+    <p>No se encontraron personas.</p>
+    <%
+        }
+    %>
 </body>
 </html>
