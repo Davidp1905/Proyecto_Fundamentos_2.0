@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package javeriana;
 
-/**
- *
- * @author Usuario Autorizado
- */
+import java.util.List;
+
+
 public class TransaccionFacade {
+    
+    private  TransaccionDAO transaccionDAO;
+    
+    public TransaccionFacade() {
+        this.transaccionDAO = new TransaccionDAO();
+    }
+    
+    public void hacerTransaccion(Transaccion transaccion) {
+        transaccionDAO.abrirConexion();
+        transaccionDAO.hacerTransaccion(transaccion);
+        transaccionDAO.cerrarConexion();
+    }
+    
+    public List<Transaccion> obtenerTransacciones(){
+        transaccionDAO.abrirConexion();
+        List<Transaccion> transacciones = transaccionDAO.obtenerTransacciones();
+        transaccionDAO.cerrarConexion();
+        return transacciones;
+    }
     
 }

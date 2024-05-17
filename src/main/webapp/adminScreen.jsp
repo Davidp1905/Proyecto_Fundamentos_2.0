@@ -59,8 +59,10 @@
         <button type="submit">Ver listado de clientes</button>
     </form>
 
-    <p><a href="VerTransacciones">Ver transacciones realizadas</a></p>  <!-- Asumiendo que también deseas un enlace para esto -->
-
+    <form action="VerTransacciones" method="post">
+        <button type="submit">Ver transacciones realizadas</button>
+    </form>
+    
     <form action="LogoutServlet" method="get">
         <button type="submit">Cerrar Sesión</button>
     </form>

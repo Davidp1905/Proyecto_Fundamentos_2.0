@@ -24,6 +24,16 @@ public class Transaccion {
         this.fecha = fecha;
     }
 
+    public Transaccion() {
+    }
+
+    public Transaccion(double monto, int documentoOrigen, int documentoDestino) {
+        this.monto = monto;
+        this.documentoOrigen = documentoOrigen;
+        this.documentoDestino = documentoDestino;
+    }
+
+    
     public int getDocumento() {
         return documento;
     }
