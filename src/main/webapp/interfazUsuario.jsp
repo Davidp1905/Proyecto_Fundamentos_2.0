@@ -56,16 +56,17 @@
     
     
     
-    <br> NOT READY CREDITOS
-    <button onclick="window.location.href='VerListadoClientesAdminServlet.jsp';">Creditos</button>
-   
-    
-    
+   <br>
+    <form action="menuCreditos.jsp" method="GET">
+        <input type="hidden" name="documento" value="<%= documento %>">
+        <button type="submit">Tus Créditos</button>
+    </form>
     <br>
+    
     <button onclick="window.location.href='menuTransacciones.jsp';">Transacciones</button>
    
     
-    <br>
+    <br><br>
     <form action="menuPockets.jsp" method="GET">
         <input type="hidden" name="documento" value="<%= documento %>">
         <button type="submit">Menú Pockets</button>

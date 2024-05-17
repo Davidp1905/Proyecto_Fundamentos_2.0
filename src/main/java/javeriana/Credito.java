@@ -22,6 +22,9 @@ public class Credito {
         this.fechaVencimiento = fechaVencimiento;
     }
 
+    public Credito() {
+    }
+
     public int getIdentificador() {
         return identificador;
     }

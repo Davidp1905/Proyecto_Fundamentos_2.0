@@ -37,7 +37,7 @@ public class BolsilloDAO {
                     b.setSaldoBolsillo(resultSet.getFloat("saldo"));
 
                     bolsillos.add(b);
-                        System.out.println("id" + b.getIdBolsillo() + " nombre: " + b.getNombreBolsillo());
+                        
                 }
             }
                   

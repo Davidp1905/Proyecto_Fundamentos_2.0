@@ -1,4 +1,5 @@
 Servlets\VerParaAgregarPockets.class
+javeriana\CreditoDAO.class
 Servlets\AgregaPlataPocketServlet.class
 Servlets\SvUsuarios.class
 com\mycompany\mavenproject1\resources\JakartaEE10Resource.class
@@ -10,6 +11,7 @@ javeriana\Cuenta.class
 javeriana\Transaccion.class
 Servlets\VerListadoClientesAdminServlet.class
 Servlets\VerCuenta.class
+Servlets\VerCreditosServlet.class
 com\mycompany\mavenproject1\JakartaRestConfiguration.class
 javeriana\TransaccionDAO.class
 LogoutServlet.class
@@ -22,6 +24,7 @@ javeriana\PersonaAppDAO.class
 Servlets\Notificaciones.class
 javeriana\BolsilloFacade.class
 javeriana\Credito.class
+javeriana\CreditoFacade.class
 Servlets\RetirarPlataPocketServlet.class
 Servlets\VerTransaccionesServlet.class
 javeriana\PersonaApp.class
