@@ -1,14 +1,5 @@
 package javeriana;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Orlando
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -81,7 +72,6 @@ public class PersonaAppDAO {
                 personas.add(persona);
                
             }
-
 
         } catch (SQLException e) {
             System.out.println("Error al recuperar personas: " + e.getMessage());
