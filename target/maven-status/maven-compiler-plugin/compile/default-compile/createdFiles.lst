@@ -1,11 +1,14 @@
 javeriana\TransaccionDAO.class
 LogoutServlet.class
+javeriana\BolsilloDAO.class
+Servlets\VerPockets.class
 Servlets\SvUsuarios.class
 javeriana\PersonaAppFacade.class
 com\mycompany\mavenproject1\resources\JakartaEE10Resource.class
 javeriana\Bolsillo.class
 javeriana\PersonaAppDAO.class
 Servlets\Notificaciones.class
+javeriana\BolsilloFacade.class
 Servlets\ConsignarCuenta.class
 javeriana\Credito.class
 javeriana\TransaccionFacade.class

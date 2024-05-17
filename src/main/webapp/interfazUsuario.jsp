@@ -65,11 +65,13 @@
     <button onclick="window.location.href='menuTransacciones.jsp';">Transacciones</button>
    
     
-    <br> NOT READY Bolsillos
-     <form action="VerListadoClientesAdminServlet" method="post">
-        <button type="submit">Bolsillos</button>
+    <br> in progress Bolsillos
+    <form action="menuPockets.jsp" method="GET">
+        <input type="hidden" name="documento" value="<%= documento %>">
+        <button type="submit">Menú Pockets</button>
     </form>
     <br>
+
      <form action="Notificaciones" method="post">
          <input type="hidden" name="documento" value="<%= documento %>">
         <button type="submit">Notificaciones</button>

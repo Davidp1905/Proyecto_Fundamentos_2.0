@@ -19,6 +19,9 @@ public class Bolsillo {
         this.saldoBolsillo = saldoBolsillo;
     }
 
+    public Bolsillo() {
+    }
+
     public int getIdBolsillo() {
         return idBolsillo;
     }
