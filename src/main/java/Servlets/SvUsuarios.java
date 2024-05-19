@@ -43,7 +43,7 @@ public class SvUsuarios extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        String email = request.getParameter("correo");  
         String telefono = request.getParameter("telefono"); 
         
         long documentoLong = Integer.parseInt(documento);

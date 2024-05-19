@@ -12,7 +12,7 @@ import javeriana.*;
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         // Establecer las cabeceras para evitar caché
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
